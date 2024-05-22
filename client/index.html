@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<title>Kudzai</title>
+<link rel="stylesheet" href="styles.css" />
+<script type="module" src="index.mjs" defer></script>
+
+<section class="workoutApp">
+  <!-- Form section -->
+  <section class="workoutFormSection">
+    <!-- exercise form code -->
+    <form class="exerciseForm form-container">
+      <h4 class="form-heading">Add Exercise</h4>
+      <label>
+        Name:
+        <input class="formInput" type="text" id="exerciseName" required />
+      </label>
+      <label>
+        Duration:
+        <input
+          class="formInput"
+          type="number"
+          min="1"
+          id="exerciseDuration"
+          required
+        />
+      </label>
+      <label>
+        Guide:
+        <textarea
+          class="formInput"
+          id="exerciseGuide"
+          rows="5"
+          cols="33"
+          required
+          maxlength="120"
+        ></textarea>
+      </label>
+      <button class="addExerciseButton">add</button>
+    </form>
+    <!-- rest form code -->
+    <form class="RestForm form-container">
+      <h4 class="form-heading">Add Rest</h4>
+      <label>
+        Duration:
+        <input
+          class="formInput"
+          type="number"
+          min="1"
+          id="restDuration"
+          required
+        />
+      </label>
+      <button class="addRestButton">add</button>
+    </form>
+  </section>
+
+  <!-- Created exercises list -->
+  <section class="exercisesSection">
+    <h4 class="title-text">Your Exercises</h4>
+    <aside class="exercisesContainer"></aside>
+  </section>
+
+  <!-- Start workout button  -->
+  <button class="startWorkoutButton">Start Workout</button>
+</section>
+
+<template id="exerciseCardTemplate">
+  <section class="exerciseCard temp">
+    <p class="exerciseNameText"></p>
+    <p class="exerciseGuideText"></p>
+    <p class="exerciseDurationText"></p>
+    <button class="deleteExerciseButton">delete</button>
+  </section>
+</template>
+
+<template id="popupTemplate">
+  <section class="popupContainer temp">
+    <section class="popupBackground"></section>
+    <section class="popupDialog">
+      <p class="popupTitle"></p>
+      <p class="popupText"></p>
+      <button class="closePopupButton">close</button>
+    </section>
+  </section>
+</template>
+
+<template id="workoutSessionTemplate">
+  <section class="sessionPopupContainer temp">
+    <section class="popupBackground"></section>
+    <section class="sessionMainContainer">
+      <h4 class="workoutTimerTitleText">Workout Session</h4>
+      <p class="timerText"></p>
+      <p class="exerciseNameTimerText"></p>
+      <aside class="timerButtonControls">
+        <button class="startTimerButton">Start</button>
+        <button class="pauseTimerButton">Pause</button>
+        <button class="exitTimerButton">Exit</button>
+      </aside>
+      <aside class="exerciseGuideTextTimerContainer">
+        <p>Exercise Guide</p>
+        <span class="exerciseGuideTextMain">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
+        </span>
+      </aside>
+    </section>
+  </section>
+</template>
